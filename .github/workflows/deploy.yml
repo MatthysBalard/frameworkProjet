@@ -18,7 +18,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build Docker image
-        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/projnasal:${{ github.sha }} .
+        run: docker buildx build -t ${{ secrets.DOCKER_USERNAME }}/projnasal:${{ github.sha }} .
 
       - name: Push Docker image
         run: docker push ${{ secrets.DOCKER_USERNAME }}/projnasal:${{ github.sha }}
