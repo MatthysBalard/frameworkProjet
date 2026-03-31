@@ -1,38 +1,50 @@
-# projNasa
+Projet NASA Explorer
+Objectif du projet
+Ce projet consiste en la création d'une application web développée avec le framework Vue.js 3. L'application consomme les données réelles issues des API publiques de la NASA pour offrir une interface de consultation de contenus astronomiques et de données télémétriques spatiales.
 
-This template should help get you started developing with Vue 3 in Vite.
+Fonctionnalités principales
+L'application est structurée autour des modules suivants :
 
-## Recommended IDE Setup
+Accueil : Interface de navigation centralisée vers les différentes sections.
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+APOD (Astronomy Picture of the Day) : Affichage d'une galerie d'images astronomiques avec leurs explications scientifiques.
 
-## Recommended Browser Setup
+Exploration Mars : Visualisation des photographies capturées par le Rover Curiosity (mission MSL).
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+Astéroïdes (NeoWs) : Suivi des objets géocroiseurs avec affichage des données techniques (vitesse, distance de passage, dangerosité potentielle).
 
-## Customize configuration
+Détails Dynamiques : Système de routage permettant d'afficher une fiche complète pour chaque objet via un identifiant unique (date ou ID numérique).
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+Organisation
+Développement : Travail réalisé en individuel.
 
-## Project Setup
+Méthodologie :
 
-```sh
+Mise en place d'un client API centralisé avec Axios.
+
+Gestion de la navigation via Vue Router avec passage de propriétés dynamiques.
+
+Structuration des composants en Composition API.
+
+Difficultés rencontrées et solutions
+Identification des sources : Les formats d'ID diffèrent selon les types d'objets (dates ISO pour APOD vs identifiants numériques pour les astéroïdes).
+
+Solution : Utilisation d'une logique de tri conditionnel dans le cycle de vie du composant Detail pour rediriger vers le bon appel API.
+
+Absence d'images pour les astéroïdes : L'API NeoWs ne fournit que des données chiffrées sans visuels.
+
+Solution : Intégration d'images d'illustration provenant du Jet Propulsion Laboratory (JPL) pour assurer la continuité visuelle de l'interface.
+
+Récupération des données Mars : Des difficultés techniques persistent sur la récupération des données de l'API Mars Rover.
+
+État actuel : Ce problème n'est pas résolu de mon côté à ce jour. En conséquence, le fonctionnement réel de cette section n'a pas pu être totalement vérifié en conditions réelles.
+
+Installation et lancement:
+
+Installation des dépendances:
+
 npm install
-```
 
-### Compile and Hot-Reload for Development
+Lancement en mode développement:
 
-```sh
 npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
